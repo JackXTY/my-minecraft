@@ -8,6 +8,8 @@ Since it's a group project from my master course, here I only list out features 
 
 ![avatar](./2.png)
 
+Video link: https://drive.google.com/file/d/14Ui341_NEk85WpPFdwvwCrQz8KxttzNy/view?usp=share_link
+
 **Features**
 
 	- Procedural generation of terrain using noise functions.
