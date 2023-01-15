@@ -1,0 +1,28 @@
+Linda Zhu:
+2022-11-07 4:30pm During the OHs, Adam helped me clarify the scale unit of chunk loading/expansion could be either a chunk or a zone for milestone 1, depending on how much(or how efficient) a test run you want it to look like.
+2022-11-07 8:15pm I asked my classmate Yue Zhang what should I do when checking adjacant face of a block outside of the chunk, i.e. the x or z coord of the block is <0 or >15. She reminded me of a similar piazza question someone posted. The answer is that we should check the m_neighbors.
+2022-11-07 9:00pm I asked my classmate Yue Zhang about the model matrix for the terrain.
+2022-11-09 4:00pm During the OHs, TA Rhuta gave me advice on debugging chunkVBOs by checking a specific chunk, i.e. its location compared to player position and its color.
+2022-11-09 5:00pm My teammate Tianyi helped me with debugging my block faces drawing apart (not forming a closed geometr). We realized that it was my vertex position set up incorrectly using the adjacent face's position while adding the face vertex's position. This equates to duplicate 1 unit position twice.
+2022-11-09 8:00pm During the OHs, TA Lorant helped me with debugging my chunks only drawing a 8x8 unit area, not the 16x16 block area as expected. He finally found out that it was me adding two vec4s with both w=1, resulting in a w=2, when passing the vertex position into the buffer, that causes the vs_Pos in the vertex shader half of the original value. During the homogenized step in OpenGL, all the positions are divided by w (which was 2 in my case), so the result will be half size smaller.
+2022-11-10 2:00pm During the OHs, I asked TA Lorant some simple ways to improve my chunking performance before multithreading in the next milestone. He recommended 1. using global positions for the vertex data directly without calling the setModelMatrix function for every chunk. 2.flag the chunks that already have VBO data created or buffered to avoid duplicate processing VBOs.
+2022-11-16 8:30pm During the OHs, TA Joanna helped me understand how caves can be generated from sampling 3D Perlin noises.
+2022-11-17 8:00pm During the OHs, TA Joanna helped me understand the post-processing pipeline.
+2022-11-18 4:30pm During the OHs, TA Logan helped me debug with "OpenGL 1285" error after merging my partner's transparent texture code. We couldn't figure out why only my computer is having this problem, but we accidentally solved another issue in opaque block texturing itself, where the fragment shader was using fbm noise after sampling a normal texture.
+2022-11-21 4:00pm During the OHs, TA Shubham helped us debug with texture rendering after merging my partner's multithreading code. We realized that it was the texture loading and binding part called over and over for each chunk in multi-threads that caused the problem. I moved the texture loading part out to mygl and only execute once.
+
+Tianyi Xiao:
+2022-12-3
+https://en.wikipedia.org/wiki/L-system
+Help me undetstand L-system better.
+2022-11-7
+https://iquilezles.org/articles/warp/
+Help me understand how to pertube the noise.
+2022-11-15 21:56
+https://en.cppreference.com/w/cpp/thread/thread/thread
+Help me understand how to create thread in c++.
+
+Runjie Zhao:
+2022-11-10 10:30am Discuss with gehan Zheng about how to resolve collision problems when colliding diagonally.
+2022-11-14 3:15pm Discuss with Professor Mally about transparent blocks' problems.
+2022-12-6  10:00am Discuss with Linda about under water noise function.
